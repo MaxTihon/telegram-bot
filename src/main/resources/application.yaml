@@ -1,0 +1,24 @@
+# Telegram bot configuration
+telegram-bot:
+  api:
+    token: 5350596840:AAG9uIobW6F6Hv87EQKgX9Onmcxxhdws1Iw
+    username: mxthn_bot
+
+# PostgresQl configuration
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/tg_bot_db
+    password: postgres
+    username: postgres
+  flyway:
+    baseline-on-migrate: true
+    locations: filesystem:\Users\MTikhonenko\IdeaProjects\telegram-bot\src\main\resources\db.migration
+  sql:
+    init:
+      mode: always
+
+# JavaRush API
+javarush:
+  api:
+    url: https://javarush.ru/api/1.0/rest
