@@ -17,11 +17,12 @@ public class HelpCommand implements Command {
                     %s - начать работу со мной
                     %s - приостановить работу со мной
                     %s - получить статистику по работе бота
+                    %s - список доступных для подписки групп
                     %s - получить помощь в работе со мной
                     
                     Будешь писать всякую ересь - буду передразнивать
                     """,
-            START.getCommandName(), STOP.getCommandName(), STAT.getCommandName(), HELP.getCommandName());
+            START.getCommandName(), STOP.getCommandName(), STAT.getCommandName(), SHOW.getCommandName(), HELP.getCommandName());
 
     public HelpCommand(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;

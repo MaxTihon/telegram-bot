@@ -1,6 +1,7 @@
 package com.mxthn_.telegrambot.bot;
 
 import com.mxthn_.telegrambot.command.CommandContainer;
+import com.mxthn_.telegrambot.javarushclient.JavaRushGroupClient;
 import com.mxthn_.telegrambot.service.SendBotMessageServiceImpl;
 import com.mxthn_.telegrambot.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,9 @@ public class TihonTelegramBot extends TelegramLongPollingBot {
     private final TelegramUserService telegramUserService;
 
     @Autowired
-    public TihonTelegramBot(TelegramUserService telegramUserService) {
+    public TihonTelegramBot(TelegramUserService telegramUserService, JavaRushGroupClient javaRushGroupClient) {
         this.telegramUserService = telegramUserService;
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), this.telegramUserService);
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), this.telegramUserService, javaRushGroupClient);
     }
 
     @Override
